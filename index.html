@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aimen 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Comic Sans MS", cursive;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      width: 320px;
+      position: relative;
+    }
+
+    .emoji {
+      font-size: 80px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #ff4d88;
+      margin-bottom: 25px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 22px;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yes {
+      background: #ff4d88;
+      color: white;
+      margin-right: 10px;
+    }
+
+    #no {
+      background: #eee;
+      position: absolute;
+    }
+
+    .celebrate {
+      display: none;
+      font-size: 22px;
+      color: #ff4d88;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="emoji">🦉💗</div>
+    <h2>Aimen, will you be my Valentine?</h2>
+
+    <button id="yes">Yes 💕</button>
+    <button id="no">No</button>
+
+    <div class="celebrate" id="celebrate">
+      I KNEW IT 😭💖<br>
+      You just made my day 🌸✨
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const card = document.querySelector(".card");
+    const yesBtn = document.getElementById("yes");
+    const celebrate = document.getElementById("celebrate");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (card.offsetWidth - 80);
+      const y = Math.random() * (card.offsetHeight - 40);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    yesBtn.addEventListener("click", () => {
+      celebrate.style.display = "block";
+      yesBtn.style.display = "none";
+      noBtn.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>
